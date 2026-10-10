@@ -1,0 +1,321 @@
+/* ==========================================================================
+   TELEPROMPTER STUDIO PRO - RESPONSIVE STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAPTOPS & STANDARD DESKTOPS (<= 1399px, e.g. 1366x768, 1280x720, 1280x800)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1399px) {
+  #top-navigation {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .header-group {
+    gap: 6px;
+  }
+
+  .header-group-brand {
+    gap: 8px;
+  }
+
+  .script-title-container {
+    max-width: 210px;
+    padding: 0 8px;
+  }
+
+  .script-title-input {
+    min-width: 50px;
+    font-size: 12.5px;
+  }
+
+  /* Compact studio tools - icon buttons preserve tooltips and functionality */
+  #btn-external-popout span,
+  #btn-open-remote-modal span {
+    display: none !important;
+  }
+
+  #btn-external-popout,
+  #btn-open-remote-modal {
+    width: 38px;
+    min-width: 38px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .mode-tab-btn {
+    padding: 0 8px;
+    font-size: 11px;
+    gap: 4px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. SMALL LAPTOPS & TABLETS LANDSCAPE (<= 1199px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) {
+  #app-container {
+    grid-template-columns: 240px 1fr 300px;
+  }
+
+  #top-navigation {
+    padding: 0 10px;
+    gap: 6px;
+  }
+
+  .header-group {
+    gap: 4px;
+  }
+
+  .script-title-container {
+    max-width: 160px;
+    padding: 0 6px;
+  }
+
+  .script-title-input {
+    min-width: 40px;
+    font-size: 12px;
+  }
+
+  .brand-badge .brand-name {
+    font-size: 14px;
+  }
+
+  /* Mode tabs icon only */
+  .mode-tab-btn span {
+    display: none;
+  }
+
+  .mode-tab-btn {
+    padding: 0 8px;
+  }
+
+  /* Move secondary actions to More dropdown */
+  #btn-topbar-diagnostics,
+  #btn-shortcuts-help {
+    display: none !important;
+  }
+
+  #btn-header-more {
+    display: inline-flex !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLETS PORTRAIT (<= 991px, e.g. 768x1024, 800x1280)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  #app-container {
+    grid-template-columns: 220px 1fr 280px;
+  }
+
+  .header-group-modes {
+    display: none !important;
+  }
+
+  #btn-open-remote-modal,
+  #btn-external-popout,
+  #btn-fullscreen {
+    display: none !important;
+  }
+
+  #btn-header-more {
+    display: inline-flex !important;
+  }
+
+  .script-title-container {
+    max-width: 150px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. MOBILE & COMPACT TABLETS (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  #app-container {
+    grid-template-rows: 52px 1fr 64px;
+    grid-template-columns: 0px 1fr 0px;
+    grid-template-areas:
+      "topbar   topbar   topbar"
+      "workspace workspace workspace"
+      "playback playback playback";
+    overflow-x: hidden;
+  }
+
+  /* Slide-in Drawers for Mobile */
+  #left-sidebar {
+    position: fixed;
+    top: 52px;
+    left: 0;
+    width: min(300px, 85vw);
+    height: calc(100vh - 52px - 64px);
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    box-shadow: var(--shadow-xl);
+    z-index: 1000;
+  }
+
+  #app-container.mobile-sidebar-open #left-sidebar {
+    transform: translateX(0);
+  }
+
+  #right-settings {
+    position: fixed;
+    top: 52px;
+    right: 0;
+    width: min(320px, 90vw);
+    height: calc(100vh - 52px - 64px);
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    box-shadow: var(--shadow-xl);
+    z-index: 1000;
+  }
+
+  #app-container.mobile-settings-open #right-settings {
+    transform: translateX(0);
+  }
+
+  /* Top Navigation Compactness */
+  #top-navigation {
+    height: 52px;
+    padding: 0 8px;
+    gap: 6px;
+    overflow-x: hidden;
+  }
+
+  .header-group {
+    gap: 6px;
+  }
+
+  .brand-badge .brand-name {
+    display: none;
+  }
+
+  .header-group-modes {
+    display: none !important;
+  }
+
+  /* Hide secondary desktop buttons, preserve in More dropdown */
+  #btn-open-remote-modal,
+  #btn-external-popout,
+  #btn-topbar-diagnostics,
+  #btn-fullscreen,
+  #btn-shortcuts-help {
+    display: none !important;
+  }
+
+  /* Show More overflow menu trigger */
+  #btn-header-more {
+    display: inline-flex !important;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  /* Compact Camera button */
+  #btn-topbar-camera #cam-status-label {
+    display: none !important;
+  }
+
+  #btn-topbar-camera {
+    padding: 0 10px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  #btn-toggle-sidebar {
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  #btn-toggle-settings {
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  .script-title-container {
+    max-width: 140px;
+    height: 36px;
+    padding: 0 6px;
+  }
+
+  .script-title-input {
+    width: 0;
+    min-width: 45px;
+    font-size: 12px;
+  }
+
+  .save-status-indicator {
+    font-size: 10px;
+  }
+
+  /* Compact Playback Bar */
+  #bottom-playback {
+    height: 64px;
+    padding: 0 8px;
+    overflow-x: hidden;
+    justify-content: center;
+  }
+
+  .playback-controls-group {
+    gap: 6px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .playback-progress-container {
+    display: none;
+  }
+
+  .btn-playback-main {
+    width: 44px;
+    height: 44px;
+  }
+
+  .btn-record {
+    padding: 8px 14px;
+    font-size: 12px;
+    min-height: 44px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. ULTRA-COMPACT MOBILE (<= 480px, e.g. 390x844, 375x667)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  :root {
+    --prompt-font-size: 36px;
+    --prompt-container-width: 95%;
+  }
+
+  .script-title-container {
+    max-width: 110px;
+    height: 34px;
+    padding: 0 4px;
+  }
+
+  .script-title-input {
+    min-width: 35px;
+    font-size: 11px;
+  }
+
+  #save-text {
+    display: none;
+  }
+
+  /* Playback controls fitting within 360px */
+  .playback-controls-group {
+    gap: 4px;
+  }
+
+  #btn-playback-stop {
+    display: none !important;
+  }
+
+  .btn-icon {
+    padding: 6px;
+  }
+
+  .modal-dialog {
+    width: 95%;
+  }
+}

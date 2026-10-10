@@ -1,0 +1,70 @@
+/* ==========================================================================
+   TELEPROMPTER STUDIO PRO - THEMES & PRESETS
+   ========================================================================== */
+
+/* Dark Studio Theme (Default) */
+[data-theme="studio-dark"] {
+  --theme-bg-color: #000000;
+  --theme-text-color: #ffffff;
+  --prompt-bg-color: var(--custom-bg-color, var(--theme-bg-color));
+  --prompt-text-color: var(--custom-text-color, var(--theme-text-color));
+  --focus-line-color: #f59e0b;
+}
+
+/* Light Reading Theme */
+[data-theme="light-reading"] {
+  --theme-bg-color: #f8fafc;
+  --theme-text-color: #0f172a;
+  --prompt-bg-color: var(--custom-bg-color, var(--theme-bg-color));
+  --prompt-text-color: var(--custom-text-color, var(--theme-text-color));
+  --focus-line-color: #4f46e5;
+  --focus-ruler-alpha: rgba(79, 70, 229, 0.12);
+  --prompt-shadow: none;
+}
+
+/* High Contrast Studio Theme */
+[data-theme="high-contrast"] {
+  --theme-bg-color: #000000;
+  --theme-text-color: #ffff00;
+  --prompt-bg-color: var(--custom-bg-color, var(--theme-bg-color));
+  --prompt-text-color: var(--custom-text-color, var(--theme-text-color));
+  --focus-line-color: #00ffff;
+  --focus-ruler-alpha: rgba(0, 255, 255, 0.25);
+  --prompt-shadow: 0 0 10px rgba(255, 255, 0, 0.4);
+}
+
+/* Green Screen Chroma Key Theme */
+[data-theme="green-screen"] {
+  --theme-bg-color: #00b140;
+  --theme-text-color: #ffffff;
+  --prompt-bg-color: var(--custom-bg-color, var(--theme-bg-color));
+  --prompt-text-color: var(--custom-text-color, var(--theme-text-color));
+  --focus-line-color: #ffffff;
+  --focus-ruler-alpha: rgba(255, 255, 255, 0.2);
+}
+
+/* Blue Screen Chroma Key Theme */
+[data-theme="blue-screen"] {
+  --theme-bg-color: #0047bb;
+  --theme-text-color: #ffffff;
+  --prompt-bg-color: var(--custom-bg-color, var(--theme-bg-color));
+  --prompt-text-color: var(--custom-text-color, var(--theme-text-color));
+  --focus-line-color: #fbbf24;
+  --focus-ruler-alpha: rgba(251, 191, 36, 0.2);
+}
+
+/* Custom User Theme */
+[data-theme="custom"] {
+  --theme-bg-color: #000000;
+  --theme-text-color: #ffffff;
+  --prompt-bg-color: var(--custom-bg-color, #000000);
+  --prompt-text-color: var(--custom-text-color, #ffffff);
+  --focus-line-color: #f59e0b;
+}
+
+/* Dyslexia Friendly Mode */
+body.font-dyslexic {
+  --prompt-font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+  --prompt-letter-spacing: 1.5px !important;
+  --prompt-line-height: 1.8 !important;
+}

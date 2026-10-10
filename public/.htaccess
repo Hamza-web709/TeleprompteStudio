@@ -1,0 +1,41 @@
+# ==============================================================================
+# TELEPROMPTER STUDIO PRO — INFINITYFREE / APACHE CONFIGURATION
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Serve existing files and directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Direct access to companion remote page
+  RewriteRule ^remote/?$ remote.html [L]
+</IfModule>
+
+# MIME Types for PWA, Modern JS Modules & Web Standards
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType text/javascript .mjs .js
+  AddType text/css .css
+  AddType application/wasm .wasm
+  AddType font/woff2 .woff2
+</IfModule>
+
+# Security & Cache Control Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Cache immutable hashed assets for 1 year
+  <FilesMatch "\.(css|js|mjs|woff2|png|svg|ico)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # Do not cache app shell and service worker
+  <FilesMatch "(index\.html|remote\.html|sw\.js|manifest\.webmanifest)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>

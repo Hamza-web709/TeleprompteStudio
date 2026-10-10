@@ -1,0 +1,29 @@
+{
+  "name": "teleprompter-studio-pro-infinityfree-v2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-Ready Premium Teleprompter Studio — InfinityFree Static Edition V2",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3200",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 3201",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "server": "node server/index.js",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "docx": "^9.9.0",
+    "jspdf": "^4.2.1",
+    "mammoth": "^1.13.0",
+    "pdfjs-dist": "^6.4.299",
+    "qrcode": "^1.5.4",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.0",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}
